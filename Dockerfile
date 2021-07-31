@@ -7,7 +7,7 @@ RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
     apt-get update -y
 
 
-RUN curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install --yes nodejs
 
 ENV PATH=/usr/local/src/mason_packages/.link/bin:${PATH} CXX=clang++
