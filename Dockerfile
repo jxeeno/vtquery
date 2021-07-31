@@ -7,7 +7,8 @@ RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
     apt-get update -y
 
 
-RUN curl https://nodejs.org/dist/v14.17.4/node-v14.17.4-linux-arm64.tar.xz | tar zxC /usr/local --strip-components=1
+RUN curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN apt-get install --yes nodejs
 
 ENV PATH=/usr/local/src/mason_packages/.link/bin:${PATH} CXX=clang++
 WORKDIR /usr/local/src
